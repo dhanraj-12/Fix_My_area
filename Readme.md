@@ -87,19 +87,20 @@ FIREBASE_CONFIG=your_firebase_config_if_any
 
 ### Backend Setup
 
-\`\`\`bash
+bash
+```
 cd backend
 npm install
 npm run dev
-\`\`\`
+```
 
 ### Frontend Setup
-
-\`\`\`bash
+bash
+```
 cd frontend
 npm install
 npm run dev
-\`\`\`
+```
 
 ---
 
