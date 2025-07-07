@@ -10,7 +10,7 @@ FixMyArea is a **crowdsourced civic issue reporting platform** that empowers com
 - 🤖 Gemini Vision describes and categorizes the issue using AI
 - 🌐 Reverse geocoding identifies the zone/area
 - 🧑‍💼 Admins are auto-assigned based on category and zone
-- 🗃️ Issues are stored in MongoDB, images in Firebase/GCP Storage
+- 🗃️ Issues are stored in MongoDB, images in AWS s3
 - 👨‍💼 Admins can view and update issue status
 
 ---
@@ -23,7 +23,7 @@ FixMyArea is a **crowdsourced civic issue reporting platform** that empowers com
 | Backend   | Node.js, Express, TypeScript       |
 | Database  | MongoDB + Mongoose                 |
 | Auth      | JWT                                |
-| Storage   | Firebase Storage / GCP Bucket      |
+| Storage   | AWS S3      |
 | AI        | Gemini 1.5 Vision API (Google AI)  |
 | Location  | OpenCage Geocoder (Reverse Geocode)|
 
@@ -50,36 +50,50 @@ FixMyArea is a **crowdsourced civic issue reporting platform** that empowers com
 ---
 
 ## 📁 Folder Structure
-\`\`\`
+```
 FixMyArea/
 ├── backend/
 │   ├── routes/
 │   ├── middleware/
 │   ├── models/
-│   └── utils/
+│   ├── utils/
+|   └── .env
+|   
 ├── frontend/
 │   ├── components/
 │   ├── pages/
 │   └── utils/
 ├── firebase/ or storage/
-├── .env
 └── README.md
-\`\`\`
+```
 
 ---
 
 ## 🔐 Environment Variables
 
-Create a \`.env\` file in the root:
+Create a `.env` file in the Backend:
 
-\`\`\`env
-PORT=3000
-MONGO_URI=your_mongodb_uri
+```
+# Google OAuth Configuration
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GOOGLE_REDIRECT_URI=your_google_redirect_uri
+
+# JWT Authentication
 JWT_SECRET=your_jwt_secret
+
+# Database
+MONGO_URL=your_mongodb_connection_string
+
+# AI Service
 GEMINI_API_KEY=your_gemini_api_key
-OPENCAGE_API_KEY=your_opencage_key
-FIREBASE_CONFIG=your_firebase_config_if_any
-\`\`\`
+
+# AWS Configuration
+AWS_ACCESS_KEY_ID=your_aws_access_key_id
+AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
+AWS_REGION=your_aws_region
+S3_BUCKET_NAME=your_s3_bucket_name 
+```
 
 ---
 
@@ -148,5 +162,5 @@ This project is licensed under the [MIT License](LICENSE).
 ## 💬 Contact
 
 For questions, collaborations, or suggestions:  
-📧 dhanraj.jadhav.dev@gmail.com  
+📧 dj004786@gmail.com  
 🌐 [github.com/dhanraj-12](https://github.com/dhanraj-12)
