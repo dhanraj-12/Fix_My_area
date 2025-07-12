@@ -29,7 +29,6 @@ function Header() {
     const handleLogout = () => {
         localStorage.removeItem('user-info');
         setIsLoggedIn(false);
-        navigate('/auth');
     };
 
     return (
@@ -38,7 +37,7 @@ function Header() {
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
-                            <span className="text-xl font-bold text-blue-400">FixMyArea</span>
+                            <span onClick={()=>navigate("/")} className="text-xl font-bold text-blue-400 cursor-pointer ">FixMyArea</span>
                         </div>
                         <nav className="hidden md:ml-10 md:block">
                             <div className="flex space-x-8">
@@ -97,7 +96,7 @@ function Header() {
                     ></div>
                     <div className="fixed inset-y-0 right-0 z-20 w-full max-w-xs bg-gray-900 shadow-xl">
                         <div className="flex h-16 items-center justify-between px-4 border-b border-gray-800">
-                            <span className="text-xl font-bold text-blue-400">FixMyArea</span>
+                            <span  className="text-xl font-bold text-blue-400">FixMyArea</span>
                             <button
                                 type="button"
                                 onClick={() => setMobileMenuOpen(false)}

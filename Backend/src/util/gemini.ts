@@ -9,7 +9,7 @@ export async function getImageDescription(buffer: Buffer): Promise<{
     description: string;
     category: string;
   }> {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro " });
   
     const prompt = `Describe this image in one short sentence focusing on local issues like roads, water, electricity, sanitation, or garbage.
   
@@ -36,7 +36,6 @@ export async function getImageDescription(buffer: Buffer): Promise<{
     const response = await result.response;
     let text = response.text().trim();
   
-    // ✅ Clean Markdown code block if present
     if (text.startsWith("```json")) {
       text = text.replace(/^```json/, "").replace(/```$/, "").trim();
     } else if (text.startsWith("```")) {
