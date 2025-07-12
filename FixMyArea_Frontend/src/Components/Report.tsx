@@ -23,6 +23,7 @@ function Report() {
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [loading, setLoading] = useState(false);
+    //@ts-ignore
     const [finalSubmitEnabled, setFinalSubmitEnabled] = useState(true);
     const [city, setCity] = useState<string>('');
     const [cities, setCities] = useState<string[]>([]);

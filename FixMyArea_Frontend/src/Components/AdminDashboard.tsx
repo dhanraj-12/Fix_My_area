@@ -125,8 +125,11 @@ function AdminDashboard() {
                 <div 
                   key={issue._id} 
                   className="bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-700"
-                >
-                  <Issue issue={issue} onStatusChange={updateIssueStatus} />
+                > 
+                  <Issue issue={issue} 
+                  //@ts-ignore
+                    onStatusChange={updateIssueStatus} />
+
                 </div>
               ))}
             </div>

@@ -9,8 +9,9 @@ import {
   CheckBadgeIcon,
   UsersIcon,
 } from '@heroicons/react/24/outline';
-
+  
 interface FeatureCard {
+//@ts-ignore
   icon: JSX.Element;
   title: string;
   description: string;

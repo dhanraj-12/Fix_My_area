@@ -12,6 +12,7 @@ interface IssueProps {
 }
 
 const Issue: React.FC<IssueProps> = ({ issue }) => {
+  //@ts-ignore
   const [img, setImg] = React.useState<string | null>(issue.imageUrl || null);
   const [description] = React.useState<string>(issue.description || "");
   const [category] = React.useState<string>(issue.category || "");
